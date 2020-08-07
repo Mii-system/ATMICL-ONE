@@ -1,5 +1,5 @@
 # ATMICL-ONE
- ATMICL-ONE Resource & Support
+ ATMICL-ONE Support & Samples
 
 # Purpose
 - +DOC: Manuals  
