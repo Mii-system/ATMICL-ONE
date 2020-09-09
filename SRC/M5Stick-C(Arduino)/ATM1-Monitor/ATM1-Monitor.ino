@@ -47,9 +47,11 @@ char  sw2_L = SW_OFF;
 char  di1 = SW_OFF;
 char  di1b = SW_OFF;
 uint32_t  di1c = 0;
+uint16_t  diFreq = 0;
 
 //----  AI
 int   aiCur = 0;
+uint16_t  aiFreq = 0;
 char  aiAdjust = 0;                 // -100 to 100 : -10.0 to +10.0%
 
 //----  i2c

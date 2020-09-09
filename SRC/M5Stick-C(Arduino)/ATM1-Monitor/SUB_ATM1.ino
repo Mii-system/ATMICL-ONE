@@ -227,19 +227,25 @@ void show_DI() {
   if (mDisp == 0) {                                 // CNT
     M5.Lcd.setTextSize(2);
     M5.Lcd.setCursor(LCD_X0, LCD_Y0 + 18);
-    M5.Lcd.printf("CNT%10u", di1c);
-
-    M5.Lcd.setTextSize(3);
-    M5.Lcd.setCursor(LCD_X0, LCD_Y0 + 48);
+    M5.Lcd.printf("C: %10u", di1c);
+    if(mMode == 2){                               // DI-i2c
+      M5.Lcd.setCursor(LCD_X0, LCD_Y0 + 36);
+      M5.Lcd.printf("F:%2d.%03d", (diFreq / 1000), (diFreq % 1000));
+      M5.Lcd.setTextSize(1);
+      M5.Lcd.setCursor(LCD_X0+ 100, LCD_Y0 + 44);
+      M5.Lcd.printf("kHz");
+    }
+    M5.Lcd.setTextSize(2);
+    M5.Lcd.setCursor(LCD_X0, LCD_Y0 + 54);
     if (di1 == DI_ON) {
-      M5.Lcd.printf("1:ON ");
+      M5.Lcd.printf("S: ON ");
       if(mMode == 2){                               // DI-i2c
         M5.Lcd.fillCircle(140, 60, 16, BLUE);
       }else{
         M5.Lcd.fillCircle(140, 60, 16, GREEN);
       }
     } else {
-      M5.Lcd.printf("1:OFF");
+      M5.Lcd.printf("S: OFF");
       M5.Lcd.fillCircle(140, 60, 14, BLACK);
     }
   } else {                                           // Chart
@@ -342,7 +348,10 @@ void show_AI() {
   //  LCD表示
   M5.Lcd.setTextSize(2);
   M5.Lcd.setCursor(LCD_X0, LCD_Y0 + 18);
-  M5.Lcd.printf("Cur:%2d.%02dA ", (aiCur / 100), (aiCur % 100));
+  M5.Lcd.printf("%2d.%02dA", (aiCur / 100), (aiCur % 100));
+  M5.Lcd.setTextSize(1);
+  M5.Lcd.setCursor(LCD_X0 + 80, LCD_Y0 + 24);
+  M5.Lcd.printf("%3d.%02dHz", (aiFreq / 100), (aiFreq % 100));
 
   if (reqDisp == 1) {                         // Chart
     reqDisp = 0;

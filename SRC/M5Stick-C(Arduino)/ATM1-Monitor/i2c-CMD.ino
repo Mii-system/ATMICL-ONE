@@ -1,14 +1,18 @@
 //--  Read Current
 void  read_Current(){
   int   wCur;
+  uint16_t  wFreq;
   byte  rxCnt;
   
-  rxCnt = Wire.requestFrom(i2c_now, 3);
-  if(rxCnt == 3){                   // OK
+  rxCnt = Wire.requestFrom(i2c_now, 5);
+  if(rxCnt == 5){                   // OK
     wCur = Wire.read();             // 0:
     wCur = Wire.read();             // 1:
     wCur = wCur *256 + Wire.read(); // 2:
     aiCur = wCur;
+    wFreq = Wire.read();            // 3:
+    wFreq = wFreq *256 + Wire.read(); // 4:
+    aiFreq = wFreq;
   }
 }
 
@@ -16,10 +20,11 @@ void  read_Current(){
 void  read_Counter(){
   char  wc;
   byte  rxCnt;
+  uint16_t  wFreq;
   uint32_t  wCnt = 0;
 
-  rxCnt = Wire.requestFrom(i2c_now, 6);
-  if(rxCnt == 6){                     // OK
+  rxCnt = Wire.requestFrom(i2c_now, 8);
+  if(rxCnt == 8){                     // OK
     wc = Wire.read();                 // 0:Dummy
     wc = Wire.read();                 // 1:ON/OFF
     if(wc == 0x01){
@@ -27,11 +32,14 @@ void  read_Counter(){
     }else{
       di1 = DI_OFF;
     }
-    wCnt = Wire.read();                 // 2:
-      wCnt = wCnt *256 + Wire.read();   // 3:
-      wCnt = wCnt *256 + Wire.read();   // 4:
-      wCnt = wCnt *256 + Wire.read();   // 5:
+    wCnt = Wire.read();               // 2:
+    wCnt = wCnt *256 + Wire.read();   // 3:
+    wCnt = wCnt *256 + Wire.read();   // 4:
+    wCnt = wCnt *256 + Wire.read();   // 5:
     di1c = wCnt;
+    wFreq = Wire.read();              // 6:
+    wFreq = wFreq *256 + Wire.read(); // 7:
+    diFreq = wFreq;
   }
 }
 
