@@ -2,7 +2,7 @@
  UIFlow Samples
 
 # Apps
-- Sigfox Sample (M5Stick-C)
+- Sigfox Sample (M5Stack & Sigfox Module)
   - ANDSGV-SF.m5f
     + Connect by Grove
     + Use default i2c Address
