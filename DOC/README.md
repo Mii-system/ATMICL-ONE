@@ -10,3 +10,5 @@
 + Manuals
   + ATM1 i2c.pdf
   + ATM1 Modbus.pdf
++ Catalog
+  + ATM1 Catalog.pdf
