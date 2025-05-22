@@ -15,4 +15,10 @@
 - Modbus sample
   - Modbus-AN16-Stack.m5f
     + wi RS485-UNIT at PortA
+- ATMICL i2c Adress Setting TOOL For M5Stack
+  - ATM1-ADRChange.m5f
+    + Connect by Grove at PortA
+    + Show Address & datas
+    + Address Update
+    + (The address will be updated when restarted.)
 
