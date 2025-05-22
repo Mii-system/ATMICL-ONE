@@ -9,6 +9,7 @@
   + ATM1 Flyer3(Equipment monitoring).pdf
 + Manuals
   + ATM1 i2c.pdf
+  + ATM1 i2cAddress.pdf
   + ATM1 Modbus.pdf
 + Catalog
   + ATM1 Catalog.pdf
