@@ -5,8 +5,9 @@
 - +DOC: Manuals  
 - +SRC: Sample Sorce & Manuals  
     - +M5Stack(Arduino)
-    - +M5Stack(UIFlow)
     - +M5Stick-C(Arduino)
+    - +M5Stack(UIFlow)
+    - +M5Core2(UIFlow)
     - +M5Stick-C(UIFlow)
 
 # はじめに
